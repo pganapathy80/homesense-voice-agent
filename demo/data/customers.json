@@ -1,0 +1,230 @@
+{
+  "customers": [
+    {
+      "_comment": "Presenter account for the live demo. The phone value is a placeholder; set PRESENTER_PHONE in .env.local to your cell and backend.load_customers() overrides it at load time. No real number is committed.",
+      "account_number": "HS-10042",
+      "name": "Prashanth Ganapathy",
+      "first_name": "Prashanth",
+      "phone": "PRESENTER_PHONE_PLACEHOLDER",
+      "email": "prashanth.ganapathy@example.com",
+      "member_since": "2023-04-11",
+      "tier": "Premium",
+      "subscription": {
+        "plan": "Premium Cloud Video",
+        "status": "active",
+        "monthly_price_usd": 14.99,
+        "renews_on": "2026-09-01",
+        "features": [
+          "60-day cloud video history",
+          "24/7 professional monitoring",
+          "Smart alerts"
+        ]
+      },
+      "devices": [
+        {
+          "device_id": "THERM-LR-01",
+          "name": "Living Room Thermostat",
+          "type": "thermostat",
+          "room": "Living Room",
+          "status": "active",
+          "temperature_f": 71,
+          "target_temperature_f": 70,
+          "mode": "cool",
+          "firmware": "4.2.1",
+          "last_seen": "2026-08-17T09:41:00Z"
+        },
+        {
+          "device_id": "CAM-FD-01",
+          "name": "Front Door Camera",
+          "type": "camera",
+          "room": "Front Door",
+          "status": "online",
+          "recording": true,
+          "firmware": "7.0.3",
+          "last_seen": "2026-08-17T09:44:00Z"
+        },
+        {
+          "device_id": "LOCK-FD-01",
+          "name": "Front Door Lock",
+          "type": "lock",
+          "room": "Front Door",
+          "status": "locked",
+          "battery_pct": 82,
+          "firmware": "2.8.0",
+          "last_seen": "2026-08-17T09:40:00Z"
+        },
+        {
+          "device_id": "SENS-BSMT-01",
+          "name": "Basement Water Sensor",
+          "type": "sensor",
+          "room": "Basement",
+          "status": "offline",
+          "battery_pct": null,
+          "firmware": "1.9.4",
+          "last_seen": "2026-08-09T02:14:00Z",
+          "note": "Stopped reporting 8 days ago. Power-cycle and hub re-pair already attempted by the customer. Needs field diagnostics."
+        }
+      ],
+      "orders": [
+        {
+          "order_id": "HS-ORD-88213",
+          "placed_on": "2026-08-14",
+          "status": "shipped",
+          "items": [
+            {
+              "sku": "HS-WS-2PK",
+              "description": "Window Sensor",
+              "quantity": 2
+            }
+          ],
+          "total_usd": 79.98,
+          "carrier": "UPS",
+          "tracking_number": "1Z999AA10123456784",
+          "estimated_delivery": "2026-08-19",
+          "eta_days": 2
+        },
+        {
+          "order_id": "HS-ORD-87004",
+          "placed_on": "2026-06-28",
+          "status": "delivered",
+          "items": [
+            {
+              "sku": "HS-CAM-FD",
+              "description": "Front Door Camera",
+              "quantity": 1
+            }
+          ],
+          "total_usd": 129.0,
+          "carrier": "UPS",
+          "tracking_number": "1Z999AA10098765432",
+          "delivered_on": "2026-07-02"
+        }
+      ],
+      "preferred_name": "Prash"
+    },
+    {
+      "account_number": "HS-20077",
+      "name": "Daniel Okafor",
+      "first_name": "Daniel",
+      "phone": "+14155550177",
+      "email": "daniel.okafor@example.com",
+      "member_since": "2024-11-02",
+      "tier": "Basic",
+      "subscription": {
+        "plan": "Premium Cloud Video",
+        "status": "lapsed",
+        "monthly_price_usd": 14.99,
+        "expired_on": "2026-06-30",
+        "features": []
+      },
+      "devices": [
+        {
+          "device_id": "THERM-BR-01",
+          "name": "Bedroom Thermostat",
+          "type": "thermostat",
+          "room": "Bedroom",
+          "status": "inactive",
+          "temperature_f": 68,
+          "target_temperature_f": 68,
+          "mode": "off",
+          "firmware": "3.1.0",
+          "last_seen": "2026-07-30T18:05:00Z",
+          "note": "Deactivated when the subscription lapsed."
+        }
+      ],
+      "orders": [
+        {
+          "order_id": "HS-ORD-90112",
+          "placed_on": "2026-05-19",
+          "status": "delivered",
+          "items": [
+            {
+              "sku": "HS-THERM",
+              "description": "Smart Thermostat",
+              "quantity": 1
+            }
+          ],
+          "total_usd": 199.0,
+          "carrier": "FedEx",
+          "tracking_number": "7712 3456 7890",
+          "delivered_on": "2026-05-23"
+        }
+      ]
+    },
+    {
+      "account_number": "HS-30001",
+      "name": "Priya Sharma",
+      "first_name": "Priya",
+      "phone": "+14155550142",
+      "email": "priya.sharma@example.com",
+      "member_since": "2022-09-15",
+      "tier": "Premium",
+      "subscription": {
+        "plan": "Premium Cloud Video",
+        "status": "active",
+        "monthly_price_usd": 14.99,
+        "renews_on": "2026-10-15",
+        "features": [
+          "60-day cloud video history",
+          "24/7 professional monitoring",
+          "Smart alerts"
+        ]
+      },
+      "devices": [
+        {
+          "device_id": "THERM-HALL-01",
+          "name": "Hallway Thermostat",
+          "type": "thermostat",
+          "room": "Hallway",
+          "status": "active",
+          "temperature_f": 72,
+          "target_temperature_f": 71,
+          "mode": "cool",
+          "firmware": "4.2.1",
+          "last_seen": "2026-08-17T09:45:00Z"
+        },
+        {
+          "device_id": "CAM-BACK-01",
+          "name": "Backyard Camera",
+          "type": "camera",
+          "room": "Backyard",
+          "status": "online",
+          "recording": true,
+          "firmware": "7.0.3",
+          "last_seen": "2026-08-17T09:45:00Z"
+        },
+        {
+          "device_id": "SENS-GAR-01",
+          "name": "Garage Motion Sensor",
+          "type": "sensor",
+          "room": "Garage",
+          "status": "offline",
+          "battery_pct": null,
+          "firmware": "1.9.4",
+          "last_seen": "2026-08-11T21:30:00Z",
+          "note": "Stopped reporting 6 days ago. Battery replaced and hub re-paired already. Needs field diagnostics."
+        }
+      ],
+      "orders": [
+        {
+          "order_id": "HS-ORD-91455",
+          "placed_on": "2026-08-15",
+          "status": "shipped",
+          "items": [
+            {
+              "sku": "HS-LOCK-FD",
+              "description": "Smart Door Lock",
+              "quantity": 1
+            }
+          ],
+          "total_usd": 179.0,
+          "carrier": "FedEx",
+          "tracking_number": "7712 9988 7766",
+          "estimated_delivery": "2026-08-20",
+          "eta_days": 3
+        }
+      ],
+      "preferred_name": "Priya"
+    }
+  ]
+}

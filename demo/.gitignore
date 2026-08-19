@@ -1,0 +1,15 @@
+.env.local
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Runtime data written by the agent (customers.json IS tracked)
+data/tickets.jsonl
+data/crm_log.jsonl
+data/handoffs.jsonl
+data/events.jsonl
+data/reports/
+data/state/
