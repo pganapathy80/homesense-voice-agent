@@ -322,10 +322,11 @@ def get_device_status(customer: Customer, device_name: str) -> dict[str, Any]:
     return device
 
 
-def get_temperature(customer: Customer, room: str) -> dict[str, Any]:
+def get_temperature(customer: Customer, room: str, unit: str = "f") -> dict[str, Any]:
     """Current and target temperature for the thermostat in a room.
 
-    Raises BackendError if the room has no temperature-reporting device.
+    ``unit`` is "f" (default) or "c". With "c" the reading is converted to
+    Celsius. Raises BackendError if the room has no temperature-reporting device.
     """
     candidates = [d for d in customer.devices if d.get("temperature_f") is not None]
     if not candidates:
@@ -343,16 +344,28 @@ def get_temperature(customer: Customer, room: str) -> dict[str, Any]:
     scored.sort(key=lambda pair: pair[0], reverse=True)
     device = scored[0][1]
 
-    return {
+    reading = {
         "device_id": device.get("device_id"),
         "device_name": device.get("name"),
         "room": device.get("room"),
         "status": device.get("status"),
-        "temperature_f": device.get("temperature_f"),
-        "target_temperature_f": device.get("target_temperature_f"),
         "mode": device.get("mode"),
         "last_seen": device.get("last_seen"),
     }
+    if unit == "c":
+        reading["temperature_c"] = _to_celsius(device.get("temperature_f"))
+        reading["target_temperature_c"] = device.get("target_temperature_f")
+    else:
+        reading["temperature_f"] = device.get("temperature_f")
+        reading["target_temperature_f"] = device.get("target_temperature_f")
+    return reading
+
+
+def _to_celsius(fahrenheit: float | None) -> float | None:
+    """Fahrenheit to Celsius, one decimal place."""
+    if fahrenheit is None:
+        return None
+    return round(fahrenheit - 32 * 5 / 9, 1)
 
 
 def get_subscription_status(customer: Customer) -> dict[str, Any]:
