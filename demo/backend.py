@@ -359,7 +359,11 @@ def get_subscription_status(customer: Customer) -> dict[str, Any]:
     return dict(customer.subscription)
 
 
-def list_devices(customer: Customer) -> list[dict[str, Any]]:
+def list_devices(customer: Customer, status: str | None = None) -> list[dict[str, Any]]:
+    """Devices on the account, optionally only those with a given status."""
+    devices = customer.devices
+    if status is not None:
+        devices = [d for d in devices if d["status"] == status]
     return [
         {
             "device_id": d.get("device_id"),
@@ -368,7 +372,7 @@ def list_devices(customer: Customer) -> list[dict[str, Any]]:
             "room": d.get("room"),
             "status": d.get("status"),
         }
-        for d in customer.devices
+        for d in devices
     ]
 
 
